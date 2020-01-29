@@ -14,11 +14,6 @@ namespace Calculator
     {
         private double accumulator = 0;
 
-        public Calculator(double accumulator)
-        {
-            Accumulator = accumulator;
-        }
-
         public double Accumulator { get; private set; }
 
         public void Clear()

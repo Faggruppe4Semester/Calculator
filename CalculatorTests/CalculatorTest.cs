@@ -50,6 +50,16 @@ namespace CalculatorTests
             Assert.That(_uut.Power(a,b),Is.EqualTo(exptectedResult));
         }
 
+
+        [TestCase(5, 2, 0)]
+        [TestCase(-5, 7, 0)]
+        [TestCase(0, 0, 0)]
+        [TestCase(3, 0, 0)]
+        public void Clear_Test_Success(double a, double b, double expectedResult)
+        {
+            _uut.Clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(expectedResult));
+        }
         /*[Test]
         public void Divide_Test_Throw()
         {
@@ -57,4 +67,6 @@ namespace CalculatorTests
             Assert.Throws(_uut.Divide(2, 0), );
         }*/
     }
+
+
 }

@@ -67,11 +67,27 @@ namespace CalculatorTests
             Assert.That(_uut.Power(a,b),Is.EqualTo(exptectedResult));
         }
 
-        /*[Test]
-        public void Divide_Test_Throw()
+        [Test]
+        public void Divide_Test_Exception()
         {
-            DivideByZeroException Exceotion = Assert.Throws<DivideByZeroException>(_uut.Divide(2, 0));
-            Assert.Throws(_uut.Divide(2, 0), );
-        }*/
+            Assert.That(() => _uut.Divide(2, 0), Throws.TypeOf<DivideByZeroException>());
+        }
+
+        [TestCase(2, 0)]
+        public void OverLoadMultiply_MultiBy2_Expect0(double multiplier1, double expected)
+        {
+            _uut.Multiply(multiplier1);
+            Assert.That(_uut.Accumulator, Is.EqualTo(expected));
+        }
+
+        [TestCase(5, 2, 0)]
+        [TestCase(-5, 7, 0)]
+        [TestCase(0, 0, 0)]
+        [TestCase(3, 0, 0)]
+        public void Clear_Test_Success(double a, double b, double expectedResult)
+        {
+            _uut.Clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(expectedResult));
+        }
     }
 }

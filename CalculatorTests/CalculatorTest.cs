@@ -50,11 +50,10 @@ namespace CalculatorTests
             Assert.That(_uut.Power(a,b),Is.EqualTo(exptectedResult));
         }
 
-        /*[Test]
-        public void Divide_Test_Throw()
+        [Test]
+        public void Divide_Test_Exception()
         {
-            DivideByZeroException Exceotion = Assert.Throws<DivideByZeroException>(_uut.Divide(2, 0));
-            Assert.Throws(_uut.Divide(2, 0), );
-        }*/
+            Assert.That(() => _uut.Divide(2, 0), Throws.TypeOf<DivideByZeroException>());
+        }
     }
 }

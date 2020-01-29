@@ -55,5 +55,12 @@ namespace CalculatorTests
         {
             Assert.That(() => _uut.Divide(2, 0), Throws.TypeOf<DivideByZeroException>());
         }
+
+        [TestCase(2, 0)]
+        public void OverLoadMultiply_MultiBy2_Expect0(double multiplier1, double expected)
+        {
+            _uut.Multiply(multiplier1);
+            Assert.That(_uut.Accumulator, Is.EqualTo(expected));
+        }
     }
 }

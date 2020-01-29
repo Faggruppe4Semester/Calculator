@@ -35,6 +35,12 @@ namespace Calculator
 
         public double Power(double x, double exp) => Math.Pow(x, exp);
 
+        public double Power(double exp)
+        {
+            accumulator = Math.Pow(accumulator, exp);
+            return accumulator;
+        }
+
         public double Divide(double a, double b)
         {
             if (b.Equals(0)) throw new DivideByZeroException();

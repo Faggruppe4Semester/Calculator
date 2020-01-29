@@ -62,5 +62,15 @@ namespace CalculatorTests
             _uut.Multiply(multiplier1);
             Assert.That(_uut.Accumulator, Is.EqualTo(expected));
         }
+
+        [TestCase(5, 2, 0)]
+        [TestCase(-5, 7, 0)]
+        [TestCase(0, 0, 0)]
+        [TestCase(3, 0, 0)]
+        public void Clear_Test_Success(double a, double b, double expectedResult)
+        {
+            _uut.Clear();
+            Assert.That(_uut.Accumulator, Is.EqualTo(expectedResult));
+        }
     }
 }

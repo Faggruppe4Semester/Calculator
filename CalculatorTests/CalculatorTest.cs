@@ -26,6 +26,15 @@ namespace CalculatorTests
             Assert.That(_uut.Add(a,b), Is.EqualTo(expectedResult));
         }
 
+        [TestCase(3, 2, 5)]
+        [TestCase(2, 1, 3)]
+        [TestCase(5,5, 10)]
+        public void AddAppend_Test_Success(double a, double b, double expectedResult)
+        {
+            _uut.Add(b);
+            Assert.That(_uut.Add(a), Is.EqualTo(expectedResult));
+        }
+
         [TestCase(1, 2, 2)]
         [TestCase(-2, 3, -6)]
         [TestCase(-4, -5, 20)]
@@ -42,6 +51,14 @@ namespace CalculatorTests
             Assert.That(_uut.Subtract(a,b),Is.EqualTo(expectedResult));
         }
 
+        [TestCase(2,3,-5)]
+        [TestCase(1, 2, -3)]
+        [TestCase(6, 6, -12)]
+        public void SubtractingAppend_Test_Success(double a, double b, double expectedResult)
+        {
+            _uut.Subtract(a);
+            Assert.That(_uut.Subtract(b), Is.EqualTo(expectedResult));
+        }
         [TestCase(2, 3, 8)]
         [TestCase(2, 4, 16)]
         [TestCase(2, 0, 1)]

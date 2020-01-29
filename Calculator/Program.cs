@@ -12,6 +12,9 @@ namespace Calculator
 
     public class Calculator
     {
+        private double accumulator = 0;
+
+        public double Accumulator { get; set; }
         public double Add(double a, double b) => a + b;
 
         public double Subtract(double a, double b) => a - b;

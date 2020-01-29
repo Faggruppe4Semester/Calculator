@@ -86,6 +86,7 @@ namespace CalculatorTests
         [TestCase(3, 0, 0)]
         public void Clear_Test_Success(double a, double b, double expectedResult)
         {
+            _uut.Add(a, b);
             _uut.Clear();
             Assert.That(_uut.Accumulator, Is.EqualTo(expectedResult));
         }

@@ -21,15 +21,39 @@ namespace Calculator
             accumulator = 0;
         }
 
-        public double Add(double a, double b) => a + b;
+        public double Add(double a, double b)
+        {
+            accumulator = a + b;
+            return accumulator;
+        }
 
-        public double Subtract(double a, double b) => a - b;
+        public double Add(double a)
+        {
+            accumulator += a;
+            return accumulator;
+        }
 
-        public double Multiply(double a, double b) => a * b;
+        public double Subtract(double a, double b)
+        {
+            accumulator = a - b;
+            return accumulator;
+        }
+
+        public double Subtract(double a)
+        {
+            accumulator -= a;
+            return accumulator;
+        }
+
+        public double Multiply(double a, double b)
+        {
+            accumulator = a * b;
+            return accumulator;
+        }
 
         public double Multiply(double Multiplier)
         {
-            accumulator *= Multiplier;
+            accumulator = accumulator * Multiplier;
             return accumulator;
         }
 
@@ -39,16 +63,23 @@ namespace Calculator
             return Math.Pow(x, exp);
         }
 
+        public double Power(double exp)
+        {
+            accumulator = Math.Pow(accumulator, exp);
+            return accumulator;
+        }
+
         public double Divide(double a, double b)
         {
             if (b.Equals(0)) throw new DivideByZeroException();
-            return a / b;
+            accumulator = a / b;
+            return accumulator;
         }
 
         public double Divide(double divider)
         {
             if (divider.Equals(0)) throw new DivideByZeroException();
-            accumulator /= divider;
+            accumulator = accumulator/divider;
             return accumulator;
         }
     }

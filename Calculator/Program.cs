@@ -53,7 +53,7 @@ namespace Calculator
 
         public double Multiply(double Multiplier)
         {
-            accumulator *= Multiplier;
+            accumulator = accumulator * Multiplier;
             return accumulator;
         }
 
@@ -75,7 +75,7 @@ namespace Calculator
         public double Divide(double divider)
         {
             if (divider.Equals(0)) throw new DivideByZeroException();
-            accumulator /= divider;
+            accumulator = accumulator/divider;
             return accumulator;
         }
     }

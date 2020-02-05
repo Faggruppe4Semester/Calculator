@@ -86,17 +86,16 @@ namespace CalculatorTests
         public void OverloadMultiply_StartAt1_Success(double a, double expected)
         {
             _uut.Add(1);
-            _uut.Multiply(a);
-            Assert.That(_uut.Accumulator, Is.EqualTo(expected));
+            Assert.That(_uut.Multiply(a), Is.EqualTo(expected));
         }
 
         [TestCase(2,0.5)]
         [TestCase(5, 0.2)]
-        public void OverloadDivide_test(double divider, double expected)
+        [TestCase(10,0.1)]
+        public void OverloadDivide_StartAt1_test(double divider, double expected)
         {
-            _uut.Add(1);
-            _uut.Divide(divider);
-            Assert.That(_uut.Accumulator,Is.EqualTo(expected));
+            _uut.Add(0,1);
+            Assert.That(_uut.Divide(divider),Is.EqualTo(expected));
         }
 
         [TestCase(5, 2, 0)]

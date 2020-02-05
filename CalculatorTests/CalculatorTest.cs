@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Calculator;
 using NUnit.Framework;
 
 namespace CalculatorTests
@@ -61,6 +62,12 @@ namespace CalculatorTests
         {
             _uut.Multiply(multiplier1);
             Assert.That(_uut.Accumulator, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void Power_ExceptionTest_Success()
+        {
+            Assert.That(() => _uut.Power(-1, 1), Throws.TypeOf<NumBeingRaisedToPowerUnderZero>());
         }
     }
 }

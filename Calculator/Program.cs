@@ -33,7 +33,11 @@ namespace Calculator
             return accumulator;
         }
 
-        public double Power(double x, double exp) => Math.Pow(x, exp);
+        public double Power(double x, double exp)
+        {
+            if (x < 0) throw new NumBeingRaisedToPowerUnderZero("First argument was negative.");
+            return Math.Pow(x, exp);
+        }
 
         public double Divide(double a, double b)
         {
@@ -47,5 +51,19 @@ namespace Calculator
             accumulator /= divider;
             return accumulator;
         }
+    }
+
+    public class NumBeingRaisedToPowerUnderZero : Exception
+    {
+        public NumBeingRaisedToPowerUnderZero()
+        { }
+
+        public NumBeingRaisedToPowerUnderZero(string message)
+            : base(message)
+        { }
+
+        public NumBeingRaisedToPowerUnderZero(string message, Exception inner)
+            : base(message, inner)
+        { }
     }
 }

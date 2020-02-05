@@ -45,7 +45,11 @@ namespace Calculator
             return accumulator;
         }
 
-        public double Multiply(double a, double b) => a * b;
+        public double Multiply(double a, double b)
+        {
+            accumulator = a * b;
+            return accumulator;
+        }
 
         public double Multiply(double Multiplier)
         {
@@ -64,7 +68,8 @@ namespace Calculator
         public double Divide(double a, double b)
         {
             if (b.Equals(0)) throw new DivideByZeroException();
-            return a / b;
+            accumulator = a / b;
+            return accumulator;
         }
 
         public double Divide(double divider)

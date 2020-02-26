@@ -65,6 +65,7 @@ namespace Calculator
 
         public double Power(double exp)
         {
+            if(Accumulator < 0) throw new NumBeingRaisedToPowerUnderZero(" First argument was negative");
             accumulator = Math.Pow(accumulator, exp);
             return accumulator;
         }

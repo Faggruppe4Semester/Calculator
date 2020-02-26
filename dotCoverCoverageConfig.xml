@@ -32,6 +32,7 @@ HTML
 <ExcludeFilters>
 <FilterEntry>
 <ModuleMask>nunit.framework</ModuleMask>
+<ClassMask>Program</ClassMask>
 <ClassMask>*</ClassMask>
 <FunctionMask>*</FunctionMask>
 </FilterEntry>

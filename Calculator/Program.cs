@@ -85,15 +85,8 @@ namespace Calculator
 
     public class NumBeingRaisedToPowerUnderZero : Exception
     {
-        public NumBeingRaisedToPowerUnderZero()
-        { }
-
         public NumBeingRaisedToPowerUnderZero(string message)
             : base(message)
-        { }
-
-        public NumBeingRaisedToPowerUnderZero(string message, Exception inner)
-            : base(message, inner)
         { }
     }
 }

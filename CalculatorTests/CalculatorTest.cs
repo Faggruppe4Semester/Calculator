@@ -74,6 +74,15 @@ namespace CalculatorTests
             Assert.That(() => _uut.Divide(2, 0), Throws.TypeOf<DivideByZeroException>());
         }
 
+        [TestCase(4, 2)]
+        [TestCase(-4, 2)]
+        [TestCase(4, -2)]
+        [TestCase(-4, -2)]
+        public void Divide_Test_Success(int a, int b)
+        {
+            Assert.That(() => _uut.Divide(a, b), Is.EqualTo(a/b));
+        }
+
         [Test]
         public void DivideOverload_Test_Exception()
         {
@@ -120,6 +129,20 @@ namespace CalculatorTests
         public void Power_ExceptionTest_Success()
         {
             Assert.That(() => _uut.Power(-1, 1), Throws.TypeOf<NumBeingRaisedToPowerUnderZero>());
+        }
+
+        [Test]
+        public void Power_Overload_Success()
+        {
+            _uut.Divide(2, 2);
+            Assert.That(() => _uut.Power(2), Is.EqualTo(Math.Pow(1, 2)));
+        }
+        
+        [Test]
+        public void Power_Overload_Exception_Thrown()
+        {
+            _uut.Subtract(1, 2);
+            Assert.That(() => _uut.Power(2), Throws.TypeOf<NumBeingRaisedToPowerUnderZero>());
         }
     }
 }

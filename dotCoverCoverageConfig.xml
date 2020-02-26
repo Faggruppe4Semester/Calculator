@@ -32,8 +32,8 @@ HTML
 <ExcludeFilters>
 <FilterEntry>
 <ModuleMask>nunit.framework</ModuleMask>
-<ClassMask>Calculator.Program</ClassMask>
-<FunctionMask>Main</FunctionMask>
+<ClassMask>Calculator.Program*</ClassMask>
+<FunctionMask>*</FunctionMask>
 </FilterEntry>
 </ExcludeFilters>
 </Filters>
